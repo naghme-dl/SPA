@@ -1,0 +1,113 @@
+* {
+  list-style: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --mainblack: rgb(36, 36, 36);
+  --bodycolor: #f6f6f6;
+  --nav-width: 250px;
+}
+body {
+  color: var(--mainblack);
+  background-color: var(--bodycolor);
+  direction: rtl;
+}
+.main_layout {
+  display: flex;
+}
+.nav {
+  height: 100vh;
+  width: var(--nav-width);
+  /* background-color: rgb(255, 255, 255); */
+  padding: 0.5rem;
+  position: sticky;
+  top: 0;
+  right: 0;
+
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+    180deg,
+    rgba(41, 31, 82, 0.774),
+    rgba(43, 28, 105, 0.651)
+  );
+  border-radius: 100px 0 0 0;
+  transition: all 0.3s ease-out;
+}
+
+.nav__items {
+  flex-grow: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: hidden;
+}
+.nav__items::-webkit-scrollbar {
+  display: none;
+}
+.nav__link {
+  text-decoration: none;
+  display: block;
+  padding: 22px 12px;
+  /* border: 1px black solid; */
+  color: rgb(255, 255, 255);
+  transition: all 0.3s ease-out;
+  margin-right: 5px;
+  display: felx;
+}
+.nav__link:hover {
+  background-color: rgba(204, 203, 206, 0.691);
+  color: #2c2498;
+  border-radius: 1.5rem;
+}
+
+#app {
+  height: 200vh;
+  background-color: var(--bodycolor);
+  padding: 1rem;
+}
+.nav_logo {
+  font-weight: bold;
+  font-size: 50px;
+  color: white;
+  margin: 40px auto;
+}
+.nav__item-lable {
+  margin-right: 20px;
+}
+.icon-container {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.app-version {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: aliceblue;
+}
+.mini-sidebar {
+  /* width: 70px; */
+  text-overflow: hidden;
+}
+
+.mini-sidebar.nav .nav__link:hover {
+  background-color: inherit;
+  color: gold;
+}
+.nav.mini-sidebar .nav_logo {
+  font-size: 1rem;
+}
+
+.nav.mini-sidebar .app-version__lable {
+  display: none;
+}
+.sidebar-toggler {
+  transition: all 0.3s ease-out;
+}
+.mini-sidebar .sidebar-toggler {
+  transform: rotate(180deg);
+  margin-right: 20px;
+  /* padding-left: 0px; */
+}
